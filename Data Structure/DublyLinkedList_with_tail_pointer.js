@@ -58,6 +58,26 @@ class DoublyLinkedList {
     }
   }
 
+  deleteFirst(){
+    if(this.isEmpty()){
+      console.log(`Node is not present`);
+    }else{
+      this.head = this.head.next;
+      this.head.prev = null;
+      this.size--;
+    }
+  }
+
+  deleteLast(){
+    if(this.isEmpty()){
+      console.log(`Node is not present`);
+    }else{
+      this.tail= this.tail.prev;
+      this.tail.next = null;
+      this.size--;
+    }
+  }
+
 
 }
 
@@ -68,5 +88,15 @@ Doubly.addFirst(3);
 Doubly.addFirst(4);
 
 Doubly.print();
+
+// console.log(Doubly.getSize());
+
+Doubly.deleteFirst();
+console.log();
+Doubly.print();
+Doubly.deleteLast();
+console.log();
+Doubly.print();
+
 
 console.log(Doubly.getSize());
